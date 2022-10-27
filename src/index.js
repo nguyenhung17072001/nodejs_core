@@ -5,6 +5,8 @@ const path = require('path')
 const app = express()
 const port = 3000
 
+const route = require('./routes')
+
 app.use(morgan('combined'))
 //console.log('__dirname: ', __dirname)
 app.use(express.static(path.join(__dirname, 'public')))
@@ -22,21 +24,9 @@ app.set('view engine', 'hbs')
 app.set('views', path.join(__dirname, 'resources/views'));
 //console.log('PATH: ', path.join(__dirname, 'resources/views'))
 
+// Routes init
+route(app);
 
-app.get('/', (req, res) => {
-  res.render('home');
-});
-app.get('/news', (req, res) => {
-  res.render('news');
-});
-
-app.get('/search', (req, res) => {
-  res.render('search');
-});
-app.post('/search', (req, res) => {
-  console.log('req.body: ', req.body)
-  res.send('')
-});
 
 
 
