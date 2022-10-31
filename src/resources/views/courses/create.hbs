@@ -1,13 +1,14 @@
 <div class="mt-4">
     <h3>Trang đăng khóa học</h3>
-    <form>
+    <form method="post" action="/courses/store">
         <div class="form-group">
-            <label for="name">Mô tả</label>
-            <input type="email" class="form-control" id="name" aria-describedby="emailHelp" placeholder="name">
+            <label for="name">Tên khóa học</label>
+            <input type="text" class="form-control" id="name" name="name">
         </div>
+
         <div class="form-group">
-            <label for="description">Mô tả</label>
-            <input type="email" class="form-control" id="description" aria-describedby="emailHelp" placeholder="Description">
+            <label for="description">Mô tả khóa học</label>
+            <input type="text" class="form-control" id="description" name="description">
         </div>
         
         
