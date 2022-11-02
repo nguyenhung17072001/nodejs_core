@@ -22,7 +22,19 @@ class CourseControllers {
     }
     //[POST] /courses/store
     store(req, res, next) {
-        res.json(req.body);
+        //res.json(req.body);
+        const formData = req.body
+        formData.image=`https://img.hung.com/${req.body.name}`
+        const course = new Course(formData)
+    
+        //console.log('formData: ', formData)
+        course.save()
+        .then(()=> {
+            res.redirect('/')
+        }).catch((err)=> {
+
+        }) 
+        
     
     }
 
